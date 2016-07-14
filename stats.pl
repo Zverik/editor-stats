@@ -63,6 +63,7 @@ sub editor {
   return 'Grass and Green' if $cr =~ /^Grass_and_Green/;
   return 'JOSM reverter' if $cr =~ /^reverter;JOSM/;
   return 'fix.loggingroads.org' if $cr =~ /^fix\.loggingroads\.org/;
+  return 'MapStalt Mini' if $cr =~ /^MapStalt Mini/;
   return 'Other';
 }
 
