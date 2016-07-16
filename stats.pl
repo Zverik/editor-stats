@@ -1,71 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-
-sub editor {
-  my $cr = shift;
-  return 'Not Specified' if $cr eq '';
-  return 'JOSM' if $cr =~ /^JOSM/;
-  return 'iD' if $cr =~ /^iD/;
-  return 'Potlatch 1' if $cr =~ /^Potlatch 1/;
-  return 'Potlatch 2' if $cr =~ /^Potlatch 2/;
-  return 'Merkaartor' if $cr =~ /^Merkaartor/;
-  return 'Vespucci' if $cr =~ /^Vespucci/;
-  return 'Go Map!!' if $cr =~ /^Go Map/;
-  return 'Pushpin' if $cr =~ /^Pushpin/;
-  return 'OsmAnd' if $cr =~ /^Osm[Aa]nd/;
-  return 'MAPS.ME' if $cr =~ /^MAPS\.ME/;
-  return 'rosemary' if $cr =~ /^rosemary/;
-  return 'rosemary' if $cr =~ /^wheelmap\.org/;
-  return 'bulk_upload.py' if $cr =~ /^bulk_upload\.py/;
-  return 'PythonOsmApi' if $cr =~ /PythonOsmApi/;
-  return 'OSMPOIEditor' if $cr =~ /^POI\+/;
-  return 'OSMPOIEditor' if $cr =~ /^OSMPOIEditor/;
-  return 'Level0' if $cr =~ /^Level0/;
-  return 'Osmose Editor' if $cr =~ /^Osmose Editor/;
-  return 'RawEdit' if $cr =~ /^RawEdit/;
-  return 'OsmHydrant' if $cr =~ /^OsmHydrant/;
-  return 'iLOE' if $cr =~ /^iLOE/;
-  return 'YAPIS' if $cr =~ /^YAPIS/;
-  return 'Services?' if $cr =~ /^Services_OpenStreetMap/;
-  return 'ArcGIS' if $cr =~ /^ArcGIS Editor/;
-  return 'osmapis' if $cr =~ /^osmapis/;
-  return 'osmapi' if $cr =~ /^osmapi(?:\/.+)?$/;
-  return 'FreieTonne' if $cr =~ /^FreieTonne/;
-  return 'osmtools' if $cr =~ /^osmtools\//;
-  return 'Redaction bot' if $cr =~ /^Redaction bot/;
-  return 'upload.py' if $cr =~ /^(?:.*\/)?upload\.py/;
-  return 'bulk_upload.py' if $cr =~ /^bulk_upload(?:_sax)\.py/;
-  return 'OpenMaps' if $cr =~ /^OpenMaps /;
-  return 'Mapzen' if $cr =~ /^Mapzen /;
-  return 'WebDRI' if $cr =~ /^WebDRI/;
-  return 'KMLManager' if $cr =~ /^KMLManager/;
-  return 'osmitter' if $cr =~ /^osmitter/;
-  return 'COFFEEDEX 2002' if $cr =~ /^COFFEEDEX 2002/;
-  return 'FindvejBot' if $cr =~ /^FindvejBot/;
-  return 'Roy' if $cr =~ /^Roy /;
-  return 'OSMPhpLib'if $cr =~ /^OSMPhpLib/;
-  return 'Fulcrum' if $cr =~ /^Fulcrum /;
-  return 'OSMapTuner' if $cr =~ /^OSMapTuner/;
-  return 'QGIS' if $cr =~ /^QGIS /;
-  return 'OpenSeaMap-Editor' if $cr =~ /^OpenSeaMap-Editor/;
-  return 'BigTinCan' if $cr =~ /^BigTinCan /;
-  return 'meta' if $cr =~ /^meta$/;
-  return 'SviMik' if $cr =~ /^SviMik/;
-  return 'My Opening Hours' if $cr =~ /^My Opening Hours/;
-  return 'Sputnik.Ru.Adminka' if $cr =~ /^Sputnik\.Ru\.Adminka/;
-  return 'OpenBeerMap' if $cr =~ /^OpenBeerMap/;
-  return 'Kort' if $cr =~ /^Kort /;
-  return 'Nomino' if $cr =~ /Nomino /;
-  return 'Route4U' if $cr =~ /^Route4U/;
-  return 'Ubiflow' if $cr =~ /^Ubiflow/;
-  return 'streetkeysmv' if $cr =~ /^streetkeysmv/;
-  return 'Grass and Green' if $cr =~ /^Grass_and_Green/;
-  return 'JOSM reverter' if $cr =~ /^reverter;JOSM/;
-  return 'fix.loggingroads.org' if $cr =~ /^fix\.loggingroads\.org/;
-  return 'MapStalt Mini' if $cr =~ /^MapStalt Mini/;
-  return 'Other';
-}
+use EDetect qw(editor);
 
 sub nf {
   my $n = shift;
