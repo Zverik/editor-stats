@@ -75,6 +75,7 @@ sub editor {
   return 'AND node cleaner/retagger' if $cr =~ /^AND /;
   return 'MyUploader' if $cr =~ /^MyUploader/;
   return 'Tayberry' if $cr =~ /^Tayberry/;
+  return 'GNOME Maps' if $cr =~ /^gnome-maps/;
   return 'Other';
 }
 
