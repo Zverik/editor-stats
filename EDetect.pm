@@ -67,7 +67,7 @@ sub editor {
   return 'Ubiflow' if $cr =~ /^Ubiflow/;
   return 'streetkeysmv' if $cr =~ /^streetkeysmv/;
   return 'Grass and Green' if $cr =~ /^Grass_and_Green/;
-  return 'JOSM reverter' if $cr =~ /^reverter;JOSM/;
+  return 'JOSM' if $cr =~ /^reverter;JOSM/;
   return 'fix.loggingroads.org' if $cr =~ /^fix\.loggingroads\.org/;
   return 'MapStalt Mini' if $cr =~ /^MapStalt Mini/;
   return 'osmupload.py' if $cr =~ /^osmupload\.py/;
