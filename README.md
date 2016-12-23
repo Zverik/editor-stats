@@ -16,6 +16,13 @@ prints statistics for the current year. Specify an optional parameter for filter
 
 For getting stats for year 2015. You can get stats for a specific month by using e.g. `2016-07` as a parameter.
 
+## Other Scripts
+
+*Wiki.pl* prepares a wiki page for publishing to [Editor Usage Stats](http://wiki.openstreetmap.org/wiki/Editor_usage_stats).
+
+*Poi.pl* downloads daily replication diffs for a year and prepares statistics on how many
+POI were added or modified with major editors.
+
 ## Author and License
 
 These scrips were written by Ilya Zverev and published under WTFPL.
