@@ -43,7 +43,6 @@ while(<>) {
 my %results;
 my $found_year = 1;
 sub process_osc;
-my $cnt = 3;
 while($found_year) {
   my $osc_url = $replication_base.sprintf("/%03d/%03d/%03d.osc.gz", int($state/1000000), int($state/1000)%1000, $state%1000);
   print STDERR "Downloading $osc_url\n";
@@ -51,7 +50,6 @@ while($found_year) {
   $found_year = process_osc(new IO::Uncompress::Gunzip(*FH));
   close FH;
   $state--;
-  last if --$cnt <= 0;
 }
 
 # Print results
