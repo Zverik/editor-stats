@@ -76,6 +76,9 @@ sub editor {
   return 'MyUploader' if $cr =~ /^MyUploader/;
   return 'Tayberry' if $cr =~ /^Tayberry/;
   return 'GNOME Maps' if $cr =~ /^gnome-maps/;
+  return 'StreetComplete' if $cr =~ /^StreetComplete/;
+  return 'FireYak' if $cr =~ /^FireYak/;
+  return 'MapContrib' if $cr =~ /^MapContrib/;
   return 'Other';
 }
 
@@ -106,7 +109,7 @@ my %wikinames = (
 my @wiki_self = (
   'JOSM', 'iD', 'Potlatch 2', 'Merkaartor', 'Vespucci', 'Go Map!!', 'MAPS.ME',
   'OsmAnd', 'Level0', 'OsmHydrant', 'RawEdit', 'Nomino', 'My Opening Hours',
-  'FreieTonne', 'MapStalt Mini', 'OSMapTuner'
+  'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete'
 );
 $wikinames{$_} = '' for @wiki_self;
 
