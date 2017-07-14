@@ -72,7 +72,7 @@ sub cnt_uid {
 
 sub table_header {
   my $title = shift;
-  print "== $title ==\n\n";
+  print "==== $title ====\n\n";
   print '{| class="wikitable sortable" style="text-align:right"'."\n";
   print "|+ style=\"padding-bottom:.5em\" | <big>$title</big>\n";
   print "|-\n";
@@ -114,7 +114,7 @@ table_header('by number of changesets');
 print_editor($_, \%changesets, \%sum_changesets) for sort_editors(\%changesets, 10000, \%all_editors);
 print "|-\n|}\n\n";
 
-table_header('by number of uids');
+table_header('by number of users (distinct uids)');
 print_editor($_, \%users, \%all_users, \&cnt_uid) for sort_editors(\%users, 200, \%all_users, \&cnt_uid);
 print "|-\n|}\n\n";
 

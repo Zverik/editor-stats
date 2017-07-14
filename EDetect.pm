@@ -79,6 +79,9 @@ sub editor {
   return 'StreetComplete' if $cr =~ /^StreetComplete/;
   return 'FireYak' if $cr =~ /^FireYak/;
   return 'MapContrib' if $cr =~ /^MapContrib/;
+  return 'Geocropping' if $cr =~ /^Geocropping/;
+  return 'RevertUI' if $cr =~ /^RevertUI/;
+  return 'OSM ↔ Wikidata' if $cr =~ /osm\.wikidata\.link/;
   return 'Other';
 }
 
@@ -113,9 +116,20 @@ my @wiki_self = (
 );
 $wikinames{$_} = '' for @wiki_self;
 
+my %websites = (
+  'Geocropping' => 'https://geocropping.xsalto.com/guide.html',
+  'RevertUI' => 'http://revert.osmz.ru/',
+  'OSM ↔ Wikidata' => 'https://osm.wikidata.link/'
+);
+
 sub editor_wikilink {
   my $e = shift;
-  return exists $wikinames{$e} ? "[[".($wikinames{$e} ? $wikinames{$e}.'|' : '')."$e]]" : $e;
+  if (exists $wikinames{$e}) {
+    return "[[".($wikinames{$e} ? $wikinames{$e}.'|' : '')."$e]]";
+  } elsif (exists $websites{$e}) {
+    return "[$websites{$e} $e]";
+  }
+  return $e;
 }
 
 1;
