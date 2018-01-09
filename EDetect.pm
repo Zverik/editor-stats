@@ -82,6 +82,9 @@ sub editor {
   return 'Geocropping' if $cr =~ /^Geocropping/;
   return 'RevertUI' if $cr =~ /^RevertUI/;
   return 'OSM ↔ Wikidata' if $cr =~ /osm\.wikidata\.link/;
+  return 'OSM Contributor' if $cr =~ /^OSM Contributor/;
+  return 'Jungle Bus' if $cr =~ /^Jungle Bus/;
+  return 'IsraelHiking' if $cr =~ /^IsraelHiking\.osm/;
   return 'Other';
 }
 
@@ -112,14 +115,16 @@ my %wikinames = (
 my @wiki_self = (
   'JOSM', 'iD', 'Potlatch 2', 'Merkaartor', 'Vespucci', 'Go Map!!', 'MAPS.ME',
   'OsmAnd', 'Level0', 'OsmHydrant', 'RawEdit', 'Nomino', 'My Opening Hours',
-  'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete'
+  'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
+  'OSM Contributor', 'Jungle Bus'
 );
 $wikinames{$_} = '' for @wiki_self;
 
 my %websites = (
   'Geocropping' => 'https://geocropping.xsalto.com/guide.html',
   'RevertUI' => 'http://revert.osmz.ru/',
-  'OSM ↔ Wikidata' => 'https://osm.wikidata.link/'
+  'OSM ↔ Wikidata' => 'https://osm.wikidata.link/',
+  'IsraelHiking' => 'https://israelhiking.osm.org.il/'
 );
 
 sub editor_wikilink {

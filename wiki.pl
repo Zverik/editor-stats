@@ -90,6 +90,7 @@ my %sum_changesets = map { $_ => 0 } @years;
 my %sum_edits = map { $_ => 0 } @years;
 my %all_editors;
 my %other_editors;
+my %other_editors_u;
 
 while(<>) {
   chomp;
@@ -99,7 +100,12 @@ while(<>) {
   next if !exists $changesets{$year};
   my $editor = editor($data[5] || '');
   $all_editors{$editor} = ();
-  $other_editors{$data[5]} += 1 + $data[3] if $editor eq 'Other';
+
+  if ($editor eq 'Other') {
+    $other_editors{$data[5]} += 1 + $data[3];
+    $other_editors_u{$data[5]} = {} if !exists $other_editors_u{$data[5]};
+    $other_editors_u{$data[5]}->{$data[1]} = ();
+  }
 
   $changesets{$year}->{$editor}++;
   $sum_changesets{$year}++;
@@ -122,5 +128,8 @@ table_header('by number of edits');
 print_editor($_, \%edits, \%sum_edits) for sort_editors(\%edits, 100_000, \%all_editors);
 print "|-\n|}\n\n";
 
-#print "== Other Editors ==\n\n";
+#print "== Other Editors by users ==\n\n";
+#$other_editors_u{$_} = cnt_uid($other_editors_u{$_}) for keys %other_editors_u;
+#printf "* %d %s\n", $other_editors_u{$_}, $_ for sort { $other_editors_u{$b} <=> $other_editors_u{$a} } keys %other_editors_u;
+#print "== Other Editors by edits ==\n\n";
 #printf "* %d %s\n", $other_editors{$_}, $_ for sort { $other_editors{$b} <=> $other_editors{$a} } keys %other_editors;
