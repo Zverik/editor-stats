@@ -10,7 +10,7 @@ my @editors = ('JOSM', 'iD', 'Potlatch 2', 'MAPS.ME', 'Other');
 my %heditors = map { $_ => undef } @editors;
 my %poi_keys = map { $_ => undef } qw(amenity tourism historic shop craft emergency office);
 my $curl = 'curl';
-my $replication_base = 'http://planet.openstreetmap.org/replication/day';
+my $replication_base = 'https://planet.openstreetmap.org/replication/day';
 
 # Read last replication state index
 

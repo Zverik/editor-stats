@@ -1,11 +1,11 @@
 # Calculating Editor Usage Stats
 
-This set of scripts was made for updating the [Editor Usage Stats](http://wiki.openstreetmap.org/wiki/Editor_usage_stats) page
+This set of scripts was made for updating the [Editor Usage Stats](https://wiki.openstreetmap.org/wiki/Editor_usage_stats) page
 on the OpenStreetMap Wiki. It shows number of changesets, edits and unique users for every popular OSM editor.
 
 ## Usage
 
-Download a changeset bz2 file from [planet.osm.org](http://planet.openstreetmap.org/). Then run:
+Download a changeset bz2 file from [planet.osm.org](https://planet.openstreetmap.org/). Then run:
 
     bzcat changesets-latest.osm.bz2 | ./xml2csv.pl | gzip > changesets.csv.gz
 
@@ -18,7 +18,7 @@ For getting stats for year 2015. You can get stats for a specific month by using
 
 ## Other Scripts
 
-*Wiki.pl* prepares a wiki page for publishing to [Editor Usage Stats](http://wiki.openstreetmap.org/wiki/Editor_usage_stats).
+*Wiki.pl* prepares a wiki page for publishing to [Editor Usage Stats](https://wiki.openstreetmap.org/wiki/Editor_usage_stats).
 
 *Poi.pl* downloads daily replication diffs for a year and prepares statistics on how many
 POI were added or modified with major editors.
