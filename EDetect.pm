@@ -9,7 +9,7 @@ our @EXPORT_OK = qw(editor editor_wikilink);
 sub editor {
   my $cr = shift;
   return 'Not Specified' if $cr eq '';
-  return 'JOSM' if $cr =~ /^JOSM/;
+  return 'JOSM' if $cr =~ /^(?:.+;)?JOSM/;
   return 'iD' if $cr =~ /^iD/;
   return 'Potlatch 0.x/1.x' if $cr =~ /^Potlatch [01]/;
   return 'Potlatch 2' if $cr =~ /^Potlatch 2/;
@@ -67,7 +67,6 @@ sub editor {
   return 'Ubiflow' if $cr =~ /^Ubiflow/;
   return 'streetkeysmv' if $cr =~ /^streetkeysmv/;
   return 'Grass and Green' if $cr =~ /^Grass_and_Green/;
-  return 'JOSM' if $cr =~ /^reverter;JOSM/;
   return 'fix.loggingroads.org' if $cr =~ /^fix\.loggingroads\.org/;
   return 'MapStalt Mini' if $cr =~ /^MapStalt Mini/;
   return 'osmupload.py' if $cr =~ /^osmupload\.py/;
@@ -85,6 +84,18 @@ sub editor {
   return 'OSM Contributor' if $cr =~ /^OSM Contributor/;
   return 'Jungle Bus' if $cr =~ /^Jungle Bus/;
   return 'IsraelHiking' if $cr =~ /^IsraelHiking\.osm/;
+  return 'RocketData' if $cr =~ /^rocketdata\.io/;
+  return 'Pic4Review' if $cr =~ /^Pic4Review/;
+  return 'Tracks Editor' if $cr =~ /^Tracks Editor/;
+  return 'Data4All' if $cr =~ /^Data4All/;
+  return 'CityZen' if $cr =~ /^CityZen/;
+  return 'Osm2go' if $cr =~ /^osm2go /;
+  return 'AutoAWS' if $cr =~ /^autoAWS/;
+  return 'DEVK Versicherung' if $cr =~ /^DEVK Versicherung/;
+  return 'osm for ruby' if $cr =~ /^osm for ruby/;
+  return 'osmlinzaddr.py' if $cr =~ /osmlinzaddr\.py/;
+  return 'FixKarlsruheSchema' if $cr =~ /^FixKarlsruheSchema/;
+  return 'GpsMid' if $cr =~ /^GpsMid_/;
   return 'Other';
 }
 
@@ -105,18 +116,19 @@ my %wikinames = (
   'osmitter' => 'Osmitter',
   'QGIS' => 'QGIS OSM Plugin',
   'Services_OSM' => 'PHP',
-  'JOSM reverter' => 'JOSM/Plugins/Reverter',
   'Osmose Editor' => 'Osmose#Osmose_integrated_tags_editor',
   'Redaction bot' => 'OSMF Redaction Bot',
   'OpenSeaMap-Editor' => 'OpenSeaMap#Editor',
-  'AND node cleaner/retagger' => 'AND Data'
+  'AND node cleaner/retagger' => 'AND Data',
+  'FixKarlsruheSchema' => 'Xybot#So_what_does_the_FixKarlsruheSchema_ruleset_do_exactly'
 );
 
 my @wiki_self = (
   'JOSM', 'iD', 'Potlatch 2', 'Merkaartor', 'Vespucci', 'Go Map!!', 'MAPS.ME',
   'OsmAnd', 'Level0', 'OsmHydrant', 'RawEdit', 'Nomino', 'My Opening Hours',
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
-  'OSM Contributor', 'Jungle Bus'
+  'OSM Contributor', 'Jungle Bus', 'Tracks Editor', 'Data4All', 'CityZen',
+  'Osm2go', 'AutoAWS', 'GpsMid'
 );
 $wikinames{$_} = '' for @wiki_self;
 
@@ -124,7 +136,11 @@ my %websites = (
   'Geocropping' => 'https://geocropping.xsalto.com/guide.html',
   'RevertUI' => 'http://revert.osmz.ru/',
   'OSM ↔ Wikidata' => 'https://osm.wikidata.link/',
-  'IsraelHiking' => 'https://israelhiking.osm.org.il/'
+  'IsraelHiking' => 'https://israelhiking.osm.org.il/',
+  'RocketData' => 'https://rocketdata.io/',
+  'Pic4Review' => 'https://pic4review.pavie.info/',
+  'DEVK Versicherung' => 'https://www.devk.de/',
+  'osmlinzaddr.py' => 'https://git.nzoss.org.nz/ewblen/osmlinzaddr'
 );
 
 sub editor_wikilink {
