@@ -31,7 +31,6 @@ sub editor {
   return 'RawEdit' if $cr =~ /^Osmose Raw Editor/;
   return 'OsmHydrant' if $cr =~ /^OsmHydrant/;
   return 'iLOE' if $cr =~ /^iLOE/;
-  return 'YAPIS' if $cr =~ /^YAPIS/;
   return 'Services_OSM' if $cr =~ /^Services_OpenStreetMap/;
   return 'ArcGIS' if $cr =~ /^ArcGIS Editor/;
   return 'osmapis' if $cr =~ /^osmapis/;
