@@ -15,7 +15,7 @@ sub editor {
   return 'Potlatch 2' if $cr =~ /^Potlatch 2/;
   return 'Merkaartor' if $cr =~ /^Merkaartor/;
   return 'Vespucci' if $cr =~ /^Vespucci/;
-  return 'Go Map!!' if $cr =~ /^Go Map/;
+  return 'Go Map!!' if $cr =~ /^Go (?:Map|Kaart)/;
   return 'Pushpin' if $cr =~ /^Pushpin/;
   return 'OsmAnd' if $cr =~ /^Osm[Aa]nd/;
   return 'MAPS.ME' if $cr =~ /^MAPS\.ME/;
@@ -96,6 +96,13 @@ sub editor {
   return 'osmlinzaddr.py' if $cr =~ /osmlinzaddr\.py/;
   return 'FixKarlsruheSchema' if $cr =~ /^FixKarlsruheSchema/;
   return 'GpsMid' if $cr =~ /^GpsMid_/;
+  return 'AndNav2' if $cr =~ /^andnav\.org/;
+  return 'Deriviste' if $cr =~ /^Deriviste/;
+  return 'Brick' if $cr =~ /^Brick/;
+  return 'SketchOSM' if $cr =~ /^SketchOSM/;
+  return 'OSMyBiz' if $cr =~ /^OSMyBiz/;
+  return 'Osm Go!' if $cr =~ /^Osm Go!/;
+  return 'Parking Lanes' if $cr =~ /^PLanes/;
   return 'Other';
 }
 
@@ -128,7 +135,7 @@ my @wiki_self = (
   'OsmAnd', 'Level0', 'OsmHydrant', 'RawEdit', 'Nomino', 'My Opening Hours',
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
   'OSM Contributor', 'Jungle Bus', 'Tracks Editor', 'Data4All', 'CityZen',
-  'Osm2go', 'AutoAWS', 'GpsMid'
+  'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!'
 );
 $wikinames{$_} = '' for @wiki_self;
 
@@ -140,7 +147,10 @@ my %websites = (
   'RocketData' => 'https://rocketdata.io/',
   'Pic4Review' => 'https://pic4review.pavie.info/',
   'DEVK Versicherung' => 'https://www.devk.de/',
-  'osmlinzaddr.py' => 'https://git.nzoss.org.nz/ewblen/osmlinzaddr'
+  'osmlinzaddr.py' => 'https://git.nzoss.org.nz/ewblen/osmlinzaddr',
+  'Brick' => 'https://edit.osmbuildings.org/',
+  'SketchOSM' => 'https://mindsightstudios.com/sketchosm/',
+  'Parking Lanes' => 'https://zlant.github.io/parking-lanes/'
 );
 
 sub editor_wikilink {
