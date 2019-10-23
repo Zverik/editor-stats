@@ -128,8 +128,8 @@ table_header('by number of edits');
 print_editor($_, \%edits, \%sum_edits) for sort_editors(\%edits, 100_000, \%all_editors);
 print "|-\n|}\n\n";
 
-#print "== Other Editors by users ==\n\n";
-#$other_editors_u{$_} = cnt_uid($other_editors_u{$_}) for keys %other_editors_u;
-#printf "* %d %s\n", $other_editors_u{$_}, $_ for sort { $other_editors_u{$b} <=> $other_editors_u{$a} } keys %other_editors_u;
-#print "== Other Editors by edits ==\n\n";
-#printf "* %d %s\n", $other_editors{$_}, $_ for sort { $other_editors{$b} <=> $other_editors{$a} } keys %other_editors;
+print "== Other Editors by users ==\n\n";
+$other_editors_u{$_} = cnt_uid($other_editors_u{$_}) for keys %other_editors_u;
+printf "* %d %s\n", $other_editors_u{$_}, $_ for sort { $other_editors_u{$b} <=> $other_editors_u{$a} } keys %other_editors_u;
+print "== Other Editors by edits ==\n\n";
+printf "* %d %s\n", $other_editors{$_}, $_ for sort { $other_editors{$b} <=> $other_editors{$a} } keys %other_editors;
