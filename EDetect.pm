@@ -130,14 +130,15 @@ my %wikinames = (
   'Redaction bot' => 'OSMF Redaction Bot',
   'OpenSeaMap-Editor' => 'OpenSeaMap#Editor',
   'AND node cleaner/retagger' => 'AND Data',
-  'FixKarlsruheSchema' => 'Xybot#So_what_does_the_FixKarlsruheSchema_ruleset_do_exactly'
+  'FixKarlsruheSchema' => 'Xybot#So_what_does_the_FixKarlsruheSchema_ruleset_do_exactly',
+  'Jungle Bus' => 'Jungle Bus mobile app'
 );
 
 my @wiki_self = (
   'JOSM', 'iD', 'Potlatch 2', 'Merkaartor', 'Vespucci', 'Go Map!!', 'MAPS.ME',
   'OsmAnd', 'Level0', 'OsmHydrant', 'RawEdit', 'Nomino', 'My Opening Hours',
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
-  'OSM Contributor', 'Jungle Bus', 'Tracks Editor', 'Data4All', 'CityZen',
+  'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
   'RapiD', 'OsmInEdit'
 );
