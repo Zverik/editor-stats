@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use FindBin 1.51 qw( $RealBin );
+use lib $RealBin;
 use EDetect qw(editor editor_wikilink);
 use Data::Dumper;
 
