@@ -140,7 +140,7 @@ my @wiki_self = (
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
   'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
-  'RapiD', 'OsmInEdit'
+  'RapiD', 'OsmInEdit', 'GNOME Maps'
 );
 $wikinames{$_} = '' for @wiki_self;
 
