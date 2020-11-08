@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use FindBin 1.51 qw( $RealBin );
-use lib $RealBin;
+use File::Basename;
+use lib dirname (__FILE__);
 use EDetect qw(editor editor_wikilink);
 use Data::Dumper;
 
@@ -13,7 +13,10 @@ sub nf {
   my ($value, $total) = @_;
   my $fmt = $value;
   $fmt =~ s/(\d{1,3}?)(?=(\d{3})+$)/$1 /g;
-  return sprintf '<span style="display:none">%011d</span> %11s%s', $value, $value ? $fmt : '-', ($value && $total ? sprintf ' (%.1f%%)', 100.0 * $value / $total : '');
+  my $percent = $total ? 100.0 * $value / $total : 0.0;
+  my $perc_str = $percent <  0.005 ? ' (~0%)' : sprintf $percent > 0.19 ? ' (%.1f%%)' : ' (%.2f%%)', $percent;
+  return sprintf '<span style="display:none">%011d</span> %11s%s', $value, $value ? $fmt : '-',
+    ($value && $total ? $perc_str : '');
 }
 
 sub extract {

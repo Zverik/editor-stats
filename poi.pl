@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use File::Basename;
+use lib dirname (__FILE__);
 use EDetect qw(editor);
 use IO::Uncompress::Gunzip;
 use XML::LibXML::Reader qw( XML_READER_TYPE_ELEMENT XML_READER_TYPE_END_ELEMENT );

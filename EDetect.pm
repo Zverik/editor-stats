@@ -106,6 +106,12 @@ sub editor {
   return 'RapiD' if $cr =~ /^RapiD /;
   return 'TrashApp' if $cr =~ /^TrashApp/;
   return 'OsmInEdit' if $cr =~ /^OsmInEdit/;
+  return 'MapComplete' if $cr =~ /^MapComplete/;
+  return 'MapRoulette' if $cr =~ /^MapRoulette/;
+  return 'Healthsites.io' if $cr =~ /^Healthsites\.io/;
+  return 'OsmPipeline' if $cr =~ /^OsmPipeline/;
+  return 'HTTPS All The Things' if $cr =~ /^https_all_the_things/;
+  return 'addr2osm' if $cr =~ /^addr2osm/;
   return 'Other';
 }
 
@@ -131,7 +137,9 @@ my %wikinames = (
   'OpenSeaMap-Editor' => 'OpenSeaMap#Editor',
   'AND node cleaner/retagger' => 'AND Data',
   'FixKarlsruheSchema' => 'Xybot#So_what_does_the_FixKarlsruheSchema_ruleset_do_exactly',
-  'Jungle Bus' => 'Jungle Bus mobile app'
+  'Jungle Bus' => 'Jungle Bus mobile app',
+  'HTTPS All The Things' => 'Automated Edits/b-jazz-bot',
+  'OsmPipeline' => 'Import/Maine E911 Addresses'
 );
 
 my @wiki_self = (
@@ -140,7 +148,7 @@ my @wiki_self = (
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
   'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
-  'RapiD', 'OsmInEdit', 'GNOME Maps'
+  'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete'
 );
 $wikinames{$_} = '' for @wiki_self;
 
@@ -156,7 +164,9 @@ my %websites = (
   'Brick' => 'https://edit.osmbuildings.org/',
   'SketchOSM' => 'https://mindsightstudios.com/sketchosm/',
   'Parking Lanes' => 'https://zlant.github.io/parking-lanes/',
-  'TrashApp' => 'https://trashapp.cc/'
+  'TrashApp' => 'https://trashapp.cc/',
+  'Healthsites.io' => 'https://healthsites.io/',
+  'addr2osm' => 'https://github.com/NKAmapper/addr2osm'
 );
 
 sub editor_wikilink {

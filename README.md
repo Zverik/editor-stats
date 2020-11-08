@@ -7,7 +7,7 @@ on the OpenStreetMap Wiki. It shows number of changesets, edits and unique users
 
 Download a changeset bz2 file from [planet.osm.org](https://planet.openstreetmap.org/). Then run:
 
-    bzcat changesets-latest.osm.bz2 | ./xml2csv.pl | gzip > changesets.csv.gz
+    curl -L <changeset.bz2_url> | bzcat | ./xml2csv.pl | gzip > changesets.csv.gz
 
 After that use `stats.pl` for calculating stats for a given year or month. By default it
 prints statistics for the current year. Specify an optional parameter for filtering dates:
