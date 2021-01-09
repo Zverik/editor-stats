@@ -112,6 +112,7 @@ sub editor {
   return 'OsmPipeline' if $cr =~ /^OsmPipeline/;
   return 'HTTPS All The Things' if $cr =~ /^https_all_the_things/;
   return 'addr2osm' if $cr =~ /^addr2osm/;
+  return 'peundemerg.ro' if $cr =~ /^peundemerg.ro/;
   return 'Other';
 }
 
@@ -166,7 +167,8 @@ my %websites = (
   'Parking Lanes' => 'https://zlant.github.io/parking-lanes/',
   'TrashApp' => 'https://trashapp.cc/',
   'Healthsites.io' => 'https://healthsites.io/',
-  'addr2osm' => 'https://github.com/NKAmapper/addr2osm'
+  'addr2osm' => 'https://github.com/NKAmapper/addr2osm',
+  'peundemerg.ro' => 'https://forum.peundemerg.ro/index.php?topic=836.0'
 );
 
 sub editor_wikilink {
