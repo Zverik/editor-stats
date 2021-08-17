@@ -121,20 +121,24 @@ while(<>) {
   $all_users{$year}->{$data[1]} = ();
 }
 
-table_header('by number of changesets');
-print_editor($_, \%changesets, \%sum_changesets) for sort_editors(\%changesets, 10000, \%all_editors);
-print "|-\n|}\n\n";
+#table_header('by number of changesets');
+#print_editor($_, \%changesets, \%sum_changesets) for sort_editors(\%changesets, 10000, \%all_editors);
+#print "|-\n|}\n\n";
 
 table_header('by number of users (distinct uids)');
-print_editor($_, \%users, \%all_users, \&cnt_uid) for sort_editors(\%users, 200, \%all_users, \&cnt_uid);
+print_editor($_, \%users, \%all_users, \&cnt_uid) for sort_editors(\%users, 400, \%all_users, \&cnt_uid);
 print "|-\n|}\n\n";
 
 table_header('by number of edits');
-print_editor($_, \%edits, \%sum_edits) for sort_editors(\%edits, 100_000, \%all_editors);
+print_editor($_, \%edits, \%sum_edits) for sort_editors(\%edits, 300_000, \%all_editors);
 print "|-\n|}\n\n";
 
 print "== Other Editors by users ==\n\n";
 $other_editors_u{$_} = cnt_uid($other_editors_u{$_}) for keys %other_editors_u;
-printf "* %d %s\n", $other_editors_u{$_}, $_ for sort { $other_editors_u{$b} <=> $other_editors_u{$a} } keys %other_editors_u;
+for (sort { $other_editors_u{$b} <=> $other_editors_u{$a} } keys %other_editors_u) {
+  printf "* %d %s\n", $other_editors_u{$_}, $_ if $other_editors_u{$_} >= 5;
+}
 print "== Other Editors by edits ==\n\n";
-printf "* %d %s\n", $other_editors{$_}, $_ for sort { $other_editors{$b} <=> $other_editors{$a} } keys %other_editors;
+for (sort { $other_editors{$b} <=> $other_editors{$a} } keys %other_editors) {
+  printf "* %d %s\n", $other_editors{$_}, $_ if $other_editors{$_} >= 1000;
+}

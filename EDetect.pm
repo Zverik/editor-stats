@@ -13,6 +13,7 @@ sub editor {
   return 'iD' if $cr =~ /^iD/;
   return 'Potlatch 0.x/1.x' if $cr =~ /^Potlatch [01]/;
   return 'Potlatch 2' if $cr =~ /^Potlatch 2/;
+  return 'Potlatch 3' if $cr =~ /^Potlatch$/;
   return 'Merkaartor' if $cr =~ /^Merkaartor/;
   return 'Vespucci' if $cr =~ /^Vespucci/;
   return 'Go Map!!' if $cr =~ /^Go (?:Map|Kaart)/;
@@ -113,6 +114,9 @@ sub editor {
   return 'HTTPS All The Things' if $cr =~ /^https_all_the_things/;
   return 'addr2osm' if $cr =~ /^addr2osm/;
   return 'peundemerg.ro' if $cr =~ /^peundemerg.ro/;
+  return 'Organic Maps' if $cr =~ /^O(rganic )?Maps /;
+  return 'ProjetDuMois.fr' if $cr =~ /^ProjetDuMois/;
+  return 'posiki_python_script' if $cr =~ /^posiki_python_script/;
   return 'Other';
 }
 
@@ -147,9 +151,9 @@ my @wiki_self = (
   'JOSM', 'iD', 'Potlatch 2', 'Merkaartor', 'Vespucci', 'Go Map!!', 'MAPS.ME',
   'OsmAnd', 'Level0', 'OsmHydrant', 'RawEdit', 'Nomino', 'My Opening Hours',
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
-  'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen',
+  'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen', 'Potlatch 3',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
-  'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete'
+  'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps'
 );
 $wikinames{$_} = '' for @wiki_self;
 
@@ -168,7 +172,8 @@ my %websites = (
   'TrashApp' => 'https://trashapp.cc/',
   'Healthsites.io' => 'https://healthsites.io/',
   'addr2osm' => 'https://github.com/NKAmapper/addr2osm',
-  'peundemerg.ro' => 'https://forum.peundemerg.ro/index.php?topic=836.0'
+  'peundemerg.ro' => 'https://forum.peundemerg.ro/index.php?topic=836.0',
+  'ProjetDuMois.fr' => 'https://projetdumois.fr/projects/2021-05_laboratory'
 );
 
 sub editor_wikilink {
