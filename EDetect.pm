@@ -117,6 +117,13 @@ sub editor {
   return 'Organic Maps' if $cr =~ /^O(rganic )?Maps /;
   return 'ProjetDuMois.fr' if $cr =~ /^ProjetDuMois/;
   return 'posiki_python_script' if $cr =~ /^posiki_python_script/;
+  return 'Centaur Mapper' if $cr =~ /^Centaur Mapper/;
+  return 'simple_revert' if $cr =~ /^(?:simple_revert|restore-version)\.py/;
+  return 'POI Collector' if $cr =~ /^POI Collector v/;
+  return 'Locus Map POI' if $cr =~ /^LoPoi /;
+  return 'Mundi App' if $cr =~ /^Mundi App/;
+  return 'OpenRecycleMap' if $cr =~ /^OpenRecycleMap/;
+  return 'LINZ Import' if $cr =~ /^LINZ \w+ Import/;
   return 'Other';
 }
 
@@ -144,7 +151,8 @@ my %wikinames = (
   'FixKarlsruheSchema' => 'Xybot#So_what_does_the_FixKarlsruheSchema_ruleset_do_exactly',
   'Jungle Bus' => 'Jungle Bus mobile app',
   'HTTPS All The Things' => 'Automated Edits/b-jazz-bot',
-  'OsmPipeline' => 'Import/Maine E911 Addresses'
+  'OsmPipeline' => 'Import/Maine E911 Addresses',
+  'LINZ Import' => 'Import/New Zealand Street Addresses (2021)'
 );
 
 my @wiki_self = (
@@ -173,7 +181,9 @@ my %websites = (
   'Healthsites.io' => 'https://healthsites.io/',
   'addr2osm' => 'https://github.com/NKAmapper/addr2osm',
   'peundemerg.ro' => 'https://forum.peundemerg.ro/index.php?topic=836.0',
-  'ProjetDuMois.fr' => 'https://projetdumois.fr/projects/2021-05_laboratory'
+  'ProjetDuMois.fr' => 'https://projetdumois.fr/projects/2021-05_laboratory',
+  'OpenRecycleMap' => 'https://openrecyclemap.org/',
+  'Locus Map POI' => 'https://www.vastuf.com/projects/lopoi/'
 );
 
 sub editor_wikilink {
