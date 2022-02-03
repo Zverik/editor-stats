@@ -152,7 +152,8 @@ my %wikinames = (
   'Jungle Bus' => 'Jungle Bus mobile app',
   'HTTPS All The Things' => 'Automated Edits/b-jazz-bot',
   'OsmPipeline' => 'Import/Maine E911 Addresses',
-  'LINZ Import' => 'Import/New Zealand Street Addresses (2021)'
+  'LINZ Import' => 'Import/New Zealand Street Addresses (2021)',
+  'posiki_python_script' => 'Finland Forest 2019 Creation'
 );
 
 my @wiki_self = (
