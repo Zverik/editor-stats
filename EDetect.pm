@@ -124,6 +124,7 @@ sub editor {
   return 'Mundi App' if $cr =~ /^Mundi App/;
   return 'OpenRecycleMap' if $cr =~ /^OpenRecycleMap/;
   return 'LINZ Import' if $cr =~ /^LINZ \w+ Import/;
+  return 'Every Door' if $cr =~ /^Every Door /;
   return 'Other';
 }
 
@@ -162,7 +163,8 @@ my @wiki_self = (
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
   'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen', 'Potlatch 3',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
-  'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps'
+  'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
+  'Every Door'
 );
 $wikinames{$_} = '' for @wiki_self;
 
