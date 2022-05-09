@@ -154,7 +154,7 @@ my %wikinames = (
   'HTTPS All The Things' => 'Automated Edits/b-jazz-bot',
   'OsmPipeline' => 'Import/Maine E911 Addresses',
   'LINZ Import' => 'Import/New Zealand Street Addresses (2021)',
-  'posiki_python_script' => 'Finland Forest 2019 Creation'
+  'OSM ↔ Wikidata' => 'OSM ↔ Wikidata matcher'
 );
 
 my @wiki_self = (
@@ -164,17 +164,14 @@ my @wiki_self = (
   'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen', 'Potlatch 3',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
   'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
-  'Every Door'
+  'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI'
 );
 $wikinames{$_} = '' for @wiki_self;
 
 my %websites = (
   'Geocropping' => 'https://geocropping.xsalto.com/guide.html',
-  'RevertUI' => 'http://revert.osmz.ru/',
-  'OSM ↔ Wikidata' => 'https://osm.wikidata.link/',
   'IsraelHiking' => 'https://israelhiking.osm.org.il/',
   'RocketData' => 'https://rocketdata.io/',
-  'Pic4Review' => 'https://pic4review.pavie.info/',
   'DEVK Versicherung' => 'https://www.devk.de/',
   'osmlinzaddr.py' => 'https://git.nzoss.org.nz/ewblen/osmlinzaddr',
   'Brick' => 'https://edit.osmbuildings.org/',
