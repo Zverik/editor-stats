@@ -9,6 +9,7 @@ our @EXPORT_OK = qw(editor editor_wikilink);
 sub editor {
   my $cr = shift;
   return 'Not Specified' if $cr eq '';
+  return 'JOSM Reverter' if $cr =~ /reverter_plugin\/\d{5}/;
   return 'JOSM' if $cr =~ /^(?:.+;)?JOSM/;
   return 'iD' if $cr =~ /^iD/;
   return 'Potlatch 0.x/1.x' if $cr =~ /^Potlatch [01]/;
@@ -76,7 +77,7 @@ sub editor {
   return 'MyUploader' if $cr =~ /^MyUploader/;
   return 'Tayberry' if $cr =~ /^Tayberry/;
   return 'GNOME Maps' if $cr =~ /^gnome-maps/;
-  return 'StreetComplete' if $cr =~ /^StreetComplete/;
+  return 'StreetComplete' if $cr =~ /^StreetComplete /;
   return 'FireYak' if $cr =~ /^FireYak/;
   return 'MapContrib' if $cr =~ /^MapContrib/;
   return 'Geocropping' if $cr =~ /^Geocropping/;
@@ -125,6 +126,7 @@ sub editor {
   return 'OpenRecycleMap' if $cr =~ /^OpenRecycleMap/;
   return 'LINZ Import' if $cr =~ /^LINZ \w+ Import/;
   return 'Every Door' if $cr =~ /^Every Door /;
+  return 'Mapa AED' if $cr =~ /aed\.openstreetmap\.org\.pl/;
   return 'Other';
 }
 
@@ -154,7 +156,8 @@ my %wikinames = (
   'HTTPS All The Things' => 'Automated Edits/b-jazz-bot',
   'OsmPipeline' => 'Import/Maine E911 Addresses',
   'LINZ Import' => 'Import/New Zealand Street Addresses (2021)',
-  'OSM ↔ Wikidata' => 'OSM ↔ Wikidata matcher'
+  'OSM ↔ Wikidata' => 'OSM ↔ Wikidata matcher',
+  'JOSM Reverter' => 'JOSM/Plugins/Reverter'
 );
 
 my @wiki_self = (
@@ -183,7 +186,8 @@ my %websites = (
   'peundemerg.ro' => 'https://forum.peundemerg.ro/index.php?topic=836.0',
   'ProjetDuMois.fr' => 'https://projetdumois.fr/projects/2021-05_laboratory',
   'OpenRecycleMap' => 'https://openrecyclemap.org/',
-  'Locus Map POI' => 'https://www.vastuf.com/projects/lopoi/'
+  'Locus Map POI' => 'https://www.vastuf.com/projects/lopoi/',
+  'Mapa AED' => 'https://aed.openstreetmap.org.pl/'
 );
 
 sub editor_wikilink {
