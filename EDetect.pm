@@ -187,7 +187,8 @@ my %websites = (
   'ProjetDuMois.fr' => 'https://projetdumois.fr/projects/2021-05_laboratory',
   'OpenRecycleMap' => 'https://openrecyclemap.org/',
   'Locus Map POI' => 'https://www.vastuf.com/projects/lopoi/',
-  'Mapa AED' => 'https://aed.openstreetmap.org.pl/'
+  'Mapa AED' => 'https://aed.openstreetmap.org.pl/',
+  'osmtools' => 'https://github.com/woodpeck/osm-revert-scripts'
 );
 
 sub editor_wikilink {
