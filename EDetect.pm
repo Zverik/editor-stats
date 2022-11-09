@@ -78,6 +78,7 @@ sub editor {
   return 'Tayberry' if $cr =~ /^Tayberry/;
   return 'GNOME Maps' if $cr =~ /^gnome-maps/;
   return 'StreetComplete' if $cr =~ /^StreetComplete /;
+  return 'StreetComplete EE' if $cr =~ /^StreetComplete_ee /;
   return 'FireYak' if $cr =~ /^FireYak/;
   return 'MapContrib' if $cr =~ /^MapContrib/;
   return 'Geocropping' if $cr =~ /^Geocropping/;
@@ -127,6 +128,7 @@ sub editor {
   return 'LINZ Import' if $cr =~ /^LINZ \w+ Import/;
   return 'Every Door' if $cr =~ /^Every Door /;
   return 'Mapa AED' if $cr =~ /aed\.openstreetmap\.org\.pl/;
+  return 'Map builder' if $cr =~ /^Map builder /;
   return 'Other';
 }
 
@@ -188,7 +190,9 @@ my %websites = (
   'OpenRecycleMap' => 'https://openrecyclemap.org/',
   'Locus Map POI' => 'https://www.vastuf.com/projects/lopoi/',
   'Mapa AED' => 'https://aed.openstreetmap.org.pl/',
-  'osmtools' => 'https://github.com/woodpeck/osm-revert-scripts'
+  'osmtools' => 'https://github.com/woodpeck/osm-revert-scripts',
+  'StreetComplete_ee' => 'https://github.com/Helium314/StreetComplete',
+  'Map builder' => 'https://www.bing.com/mapbuilder/'
 );
 
 sub editor_wikilink {
