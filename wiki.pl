@@ -48,12 +48,15 @@ sub sort_editors {
   $values{$_} = extract($dataref, $year, $_, $extract_func) for keys %{$dataref->{$year}};
   $values{editor('-')} = -1;
   $values{editor('')} = -2;
+  my %counts;
+  $counts{$_} = 0 for keys %values;
 
   # Filter out editors that didn't match the threshold
   for my $editor (keys %values) {
     next if $values{$editor} < 0;
     my $count = 0;
     $count += extract($dataref, $_, $editor, $extract_func) || 0 for @years;
+    $counts{$editor} = $count;
     if ($count < $threshold) {
       delete $values{$editor} if $count < $threshold;
       # Add its counters to 'Other'
@@ -67,7 +70,7 @@ sub sort_editors {
       }
     }
   }
-  return sort { $values{$b} <=> $values{$a} || $a cmp $b } keys %values;
+  return sort { $values{$b} <=> $values{$a} || $counts{$b} <=> $counts{$a} || $a cmp $b } keys %values;
 }
 
 sub cnt_uid {
@@ -126,7 +129,7 @@ while(<>) {
 #print "|-\n|}\n\n";
 
 table_header('by number of users (distinct uids)');
-print_editor($_, \%users, \%all_users, \&cnt_uid) for sort_editors(\%users, 400, \%all_users, \&cnt_uid);
+print_editor($_, \%users, \%all_users, \&cnt_uid) for sort_editors(\%users, 500, \%all_editors, \&cnt_uid);
 print "|-\n|}\n\n";
 
 table_header('by number of edits');
