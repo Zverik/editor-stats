@@ -9,10 +9,14 @@ Download a changeset bz2 file from [planet.osm.org](https://planet.openstreetmap
 
     curl -L <changeset.bz2_url> | bzcat | ./xml2csv.pl | gzip > changesets.csv.gz
 
+> (Script xml2csv.pl take approximately 30mn on a regular computer) 
+
 After that use `stats.pl` for calculating stats for a given year or month. By default it
 prints statistics for the current year. Specify an optional parameter for filtering dates:
 
     gzip -dc changesets.csv.gz | ./stats.pl 2015 > 2015.lst
+    
+> (Script stats.pl take approximately 2mn on a regular computer) 
 
 For getting stats for year 2015. You can get stats for a specific month by using e.g. `2016-07` as a parameter.
 
