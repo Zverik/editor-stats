@@ -129,6 +129,7 @@ sub editor {
   return 'Every Door' if $cr =~ /^Every Door /;
   return 'Mapa AED' if $cr =~ /aed\.openstreetmap\.org\.pl/;
   return 'Map builder' if $cr =~ /^Map builder /;
+  return 'refill.bz.it' if $cr =~ /^Refill Südtirol / Alto Adige$/;
   return 'Other';
 }
 
@@ -192,7 +193,8 @@ my %websites = (
   'Mapa AED' => 'https://aed.openstreetmap.org.pl/',
   'osmtools' => 'https://github.com/woodpeck/osm-revert-scripts',
   'StreetComplete_ee' => 'https://github.com/Helium314/StreetComplete',
-  'Map builder' => 'https://www.bing.com/mapbuilder/'
+  'Map builder' => 'https://www.bing.com/mapbuilder/',
+  'refill.bz.it' => 'https://www.refill.bz.it/'
 );
 
 sub editor_wikilink {
