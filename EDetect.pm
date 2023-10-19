@@ -106,7 +106,7 @@ sub editor {
   return 'OSMyBiz' if $cr =~ /^OSMyBiz/;
   return 'Osm Go!' if $cr =~ /^Osm Go!/;
   return 'Parking Lanes' if $cr =~ /^PLanes/;
-  return 'RapiD' if $cr =~ /^RapiD /;
+  return 'Rapid' if $cr =~ /^Rapi[dD] /;
   return 'TrashApp' if $cr =~ /^TrashApp/;
   return 'OsmInEdit' if $cr =~ /^OsmInEdit/;
   return 'MapComplete' if $cr =~ /^MapComplete/;
@@ -129,7 +129,10 @@ sub editor {
   return 'Every Door' if $cr =~ /^Every Door /;
   return 'Mapa AED' if $cr =~ /aed\.openstreetmap\.org\.pl/;
   return 'Map builder' if $cr =~ /^Map builder /;
-  return 'refill.bz.it' if $cr =~ /^Refill Südtirol / Alto Adige$/;
+  return 'refill.bz.it' if $cr =~ /^Refill Südtirol \/ Alto Adige$/;
+  return 'OpenAEDMap' if $cr =~ /openaedmap\.org/;
+  return 'osm-revert' if $cr =~ /^osm-revert /;
+  return 'OpenStop' if $cr =~ /^OpenStop/;
   return 'Other';
 }
 
@@ -160,7 +163,9 @@ my %wikinames = (
   'OsmPipeline' => 'Import/Maine E911 Addresses',
   'LINZ Import' => 'Import/New Zealand Street Addresses (2021)',
   'OSM ↔ Wikidata' => 'OSM ↔ Wikidata matcher',
-  'JOSM Reverter' => 'JOSM/Plugins/Reverter'
+  'JOSM Reverter' => 'JOSM/Plugins/Reverter',
+  'OpenStop' => 'DE:OpenStop',
+  'StreetComplete EE' => 'SCEE'
 );
 
 my @wiki_self = (
@@ -169,8 +174,8 @@ my @wiki_self = (
   'FreieTonne', 'MapStalt Mini', 'OSMapTuner', 'MapContrib', 'StreetComplete',
   'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen', 'Potlatch 3',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
-  'RapiD', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
-  'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI'
+  'Rapid', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
+  'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI', 'osm-revert'
 );
 $wikinames{$_} = '' for @wiki_self;
 
@@ -192,9 +197,9 @@ my %websites = (
   'Locus Map POI' => 'https://www.vastuf.com/projects/lopoi/',
   'Mapa AED' => 'https://aed.openstreetmap.org.pl/',
   'osmtools' => 'https://github.com/woodpeck/osm-revert-scripts',
-  'StreetComplete_ee' => 'https://github.com/Helium314/StreetComplete',
   'Map builder' => 'https://www.bing.com/mapbuilder/',
-  'refill.bz.it' => 'https://www.refill.bz.it/'
+  'refill.bz.it' => 'https://www.refill.bz.it/',
+  'OpenAEDMap' => 'https://openaedmap.org/'
 );
 
 sub editor_wikilink {
