@@ -131,8 +131,11 @@ sub editor {
   return 'Map builder' if $cr =~ /^Map builder /;
   return 'refill.bz.it' if $cr =~ /^Refill Südtirol \/ Alto Adige$/;
   return 'OpenAEDMap' if $cr =~ /openaedmap\.org/;
+  return 'OpenAEDMap' if $cr =~ /^AED Map for/;
   return 'osm-revert' if $cr =~ /^osm-revert /;
   return 'OpenStop' if $cr =~ /^OpenStop/;
+  return 'OSM Tags Editor' if $cr =~ /^Osm\.Org Tags Editor/;
+  return 'Relatify' if $cr =~ /^osm-relatify /;
   return 'Other';
 }
 
@@ -165,7 +168,8 @@ my %wikinames = (
   'OSM ↔ Wikidata' => 'OSM ↔ Wikidata matcher',
   'JOSM Reverter' => 'JOSM/Plugins/Reverter',
   'OpenStop' => 'DE:OpenStop',
-  'StreetComplete EE' => 'SCEE'
+  'StreetComplete EE' => 'SCEE',
+  'OSM Tags Editor' => 'OpenStreetMap Tags Editor'
 );
 
 my @wiki_self = (
@@ -175,7 +179,8 @@ my @wiki_self = (
   'OSM Contributor', 'Tracks Editor', 'Data4All', 'CityZen', 'Potlatch 3',
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
   'Rapid', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
-  'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI', 'osm-revert'
+  'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI', 'osm-revert',
+  'Relatify'
 );
 $wikinames{$_} = '' for @wiki_self;
 
