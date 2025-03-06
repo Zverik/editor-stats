@@ -136,6 +136,7 @@ sub editor {
   return 'OpenStop' if $cr =~ /^OpenStop/;
   return 'OSM Tags Editor' if $cr =~ /^Osm\.Org Tags Editor/;
   return 'Relatify' if $cr =~ /^osm-relatify /;
+  return 'OsmAPP' if $cr =~ /^OsmAPP/;
   return 'Other';
 }
 
@@ -169,7 +170,8 @@ my %wikinames = (
   'JOSM Reverter' => 'JOSM/Plugins/Reverter',
   'OpenStop' => 'DE:OpenStop',
   'StreetComplete EE' => 'SCEE',
-  'OSM Tags Editor' => 'OpenStreetMap Tags Editor'
+  'OSM Tags Editor' => 'OpenStreetMap Tags Editor',
+  'OsmAPP' => 'OsmAPP'
 );
 
 my @wiki_self = (
