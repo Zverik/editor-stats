@@ -132,10 +132,12 @@ sub editor {
   return 'refill.bz.it' if $cr =~ /^Refill Südtirol \/ Alto Adige$/;
   return 'OpenAEDMap' if $cr =~ /openaedmap\.org/;
   return 'OpenAEDMap' if $cr =~ /^AED Map for/;
+  return 'OpenAEDMap' if $cr =~ /openaedmap-backend /;
   return 'osm-revert' if $cr =~ /^osm-revert /;
   return 'OpenStop' if $cr =~ /^OpenStop/;
   return 'OSM Tags Editor' if $cr =~ /^Osm\.Org Tags Editor/;
   return 'Relatify' if $cr =~ /^osm-relatify /;
+  return 'CoMaps' if $cr =~ /^CoMaps /;
   return 'Other';
 }
 
@@ -180,7 +182,7 @@ my @wiki_self = (
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
   'Rapid', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
   'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI', 'osm-revert',
-  'Relatify'
+  'Relatify', 'CoMaps'
 );
 $wikinames{$_} = '' for @wiki_self;
 
