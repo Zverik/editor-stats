@@ -138,6 +138,8 @@ sub editor {
   return 'OSM Tags Editor' if $cr =~ /^Osm\.Org Tags Editor/;
   return 'Relatify' if $cr =~ /^osm-relatify /;
   return 'CoMaps' if $cr =~ /^CoMaps /;
+  return 'DeFlock' if $cr =~ /^DeFlock /;
+  return 'OsmAPP' if $cr =~ /^OsmAPP /;
   return 'Other';
 }
 
@@ -182,7 +184,7 @@ my @wiki_self = (
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
   'Rapid', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
   'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI', 'osm-revert',
-  'Relatify', 'CoMaps'
+  'Relatify', 'CoMaps', 'OsmAPP'
 );
 $wikinames{$_} = '' for @wiki_self;
 
@@ -206,7 +208,8 @@ my %websites = (
   'osmtools' => 'https://github.com/woodpeck/osm-revert-scripts',
   'Map builder' => 'https://www.bing.com/mapbuilder/',
   'refill.bz.it' => 'https://www.refill.bz.it/',
-  'OpenAEDMap' => 'https://openaedmap.org/'
+  'OpenAEDMap' => 'https://openaedmap.org/',
+  'DeFlock' => 'https://deflock.me/app'
 );
 
 sub editor_wikilink {
