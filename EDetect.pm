@@ -87,6 +87,7 @@ sub editor {
   return 'OSM Contributor' if $cr =~ /^OSM Contributor/;
   return 'Jungle Bus' if $cr =~ /^Jungle Bus/;
   return 'IsraelHiking' if $cr =~ /^IsraelHiking\.osm/;
+  return 'IsraelHiking' if $cr =~ /^https:\/\/israelhiking\.osm\.org\.il/;
   return 'RocketData' if $cr =~ /^rocketdata\.io/;
   return 'Pic4Review' if $cr =~ /^Pic4Review/;
   return 'Tracks Editor' if $cr =~ /^Tracks Editor/;
@@ -140,6 +141,10 @@ sub editor {
   return 'CoMaps' if $cr =~ /^CoMaps /;
   return 'DeFlock' if $cr =~ /^DeFlock /;
   return 'OsmAPP' if $cr =~ /^OsmAPP /;
+  return 'Cartes.app' if $cr =~ /^Cartes\.app/;
+  return 'osm-phone-report' if $cr =~ /^osm-phone-report\//;
+  return 'better-osm-org' if $cr =~ /^better.osm.org /;
+  return 'Desert Maps' if $cr =~ /^Desert Maps /;
   return 'Other';
 }
 
@@ -173,7 +178,9 @@ my %wikinames = (
   'JOSM Reverter' => 'JOSM/Plugins/Reverter',
   'OpenStop' => 'DE:OpenStop',
   'StreetComplete EE' => 'SCEE',
-  'OSM Tags Editor' => 'OpenStreetMap Tags Editor'
+  'OSM Tags Editor' => 'OpenStreetMap Tags Editor',
+  'osm-phone-report' => 'Automated_edits/confusedbuffalo/Fix_basic_phone_number_issues',
+  'better-osm-org' => 'Better-osm-org'
 );
 
 my @wiki_self = (
@@ -184,7 +191,7 @@ my @wiki_self = (
   'Osm2go', 'AutoAWS', 'GpsMid', 'Deriviste', 'AndNav2', 'OSMyBiz', 'Osm Go!',
   'Rapid', 'OsmInEdit', 'GNOME Maps', 'MapRoulette', 'MapComplete', 'Organic Maps',
   'Every Door', 'Pic4Review', 'posiki_python_script', 'RevertUI', 'osm-revert',
-  'Relatify', 'CoMaps', 'OsmAPP'
+  'Relatify', 'CoMaps', 'OsmAPP', 'Cartes.app'
 );
 $wikinames{$_} = '' for @wiki_self;
 
